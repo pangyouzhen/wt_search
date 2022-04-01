@@ -34,7 +34,7 @@ def make_qrels(query_dict, corpus_dict,
 
     for line in tqdm(train_lines):
         q_id = int(line[0])
-        v_id = int(line[2])
+        v_id = int(line[1])
         q = query_dict[q_id]
         v = corpus_dict[v_id]
         writer.writerow([q, v])
@@ -44,7 +44,7 @@ def make_qrels(query_dict, corpus_dict,
 
     for line in tqdm(test_lines):
         q_id = int(line[0])
-        v_id = int(line[2])
+        v_id = int(line[1])
         q = query_dict[q_id]
         v = corpus_dict[v_id]
 

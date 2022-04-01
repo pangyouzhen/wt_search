@@ -7,8 +7,8 @@ export CUDA_VISIBLE_DEVICES=0
 NUM_GPU=0
 PORT_ID=$(expr $RANDOM + 1000)
 export OMP_NUM_THREADS=8
-python -m torch.distributed.launch --nproc_per_node $NUM_GPU --master_port $PORT_ID  2.train.py \
-    --model_name_or_path hfl/chinese-roberta-wwm-ext \
+python 2.train.py \
+    --model_name_or_path ./pretain/chinese-roberta-wwm-ext \
     --train_file "./data/query_doc.csv" \
     --validation_file "./data/query_doc_test.csv" \
     --output_dir ./result/unsup-simcse \
