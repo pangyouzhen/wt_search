@@ -3,10 +3,6 @@
 # In this example, we show how to train SimCSE on unsupervised Wikipedia data.
 # If you want to train it with multiple GPU cards, see "run_sup_example.sh"
 # about how to use PyTorch's distributed data parallel.
-export CUDA_VISIBLE_DEVICES=0
-NUM_GPU=0
-PORT_ID=$(expr $RANDOM + 1000)
-export OMP_NUM_THREADS=8
 python 2.train.py \
     --model_name_or_path hfl/chinese-roberta-wwm-ext \
     --train_file "./data/query_doc.csv" \

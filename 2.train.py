@@ -277,7 +277,8 @@ class OurTrainingArguments(TrainingArguments):
 
         if device.type == "cuda":
             torch.cuda.set_device(device)
-
+        # 强制使用cpu
+        device = torch.device("cpu")
         return device
 
 
